@@ -1,0 +1,71 @@
+/* ==========================================================================
+   Fiyat Nöbeti — Tasarım Token Sistemi
+   Konsept: bir "piyasa nöbetçisi" / trading-desk hassasiyeti. Satıcının
+   parasını koruyan sessiz ama kararlı bir sistem hissi.
+   ========================================================================== */
+
+:root {
+  /* Renk */
+  --paper: #F2F4F3;         /* soğuk, camsı beyaz zemin */
+  --surface: #FFFFFF;        /* kart yüzeyleri */
+  --ink: #121821;            /* ana metin / grafit lacivert */
+  --ink-soft: #5B6570;       /* ikincil metin */
+  --line: #DEE3E0;           /* ince ayraç çizgileri */
+  --line-strong: #C4CBC7;
+
+  --guard-teal: #0E7C6B;     /* korunan marj / güvenli durum */
+  --guard-teal-soft: #E3F1EE;
+  --signal-amber: #C97A1E;   /* aksiyon gerekli / piyasa yükseldi */
+  --signal-amber-soft: #FBEEDD;
+  --forbidden-red: #A63B2A;  /* taban altı - yasak bölge */
+  --forbidden-red-soft: #F7E7E3;
+
+  /* Tipografi */
+  --font-display: "Space Grotesk", "Inter", sans-serif;
+  --font-body: "Inter", -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  /* Ölçü */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --shadow-card: 0 1px 2px rgba(18, 24, 33, 0.04), 0 8px 24px -12px rgba(18, 24, 33, 0.12);
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input, select {
+  font-family: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--guard-teal);
+  outline-offset: 2px;
+}
+
+.mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+
+/* Scrollbar - sade */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: var(--line-strong); border-radius: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}

@@ -1,0 +1,24 @@
+.toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  max-width: 360px;
+  padding: 13px 18px;
+  border-radius: var(--radius-sm);
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #fff;
+  box-shadow: var(--shadow-card);
+  animation: toast-in 0.2s ease;
+  z-index: 50;
+}
+
+@keyframes toast-in {
+  from { transform: translateY(8px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.toast-info { background: var(--ink); }
+.toast-guard { background: var(--guard-teal); }
+.toast-amber { background: var(--signal-amber); }
+.toast-error { background: var(--forbidden-red); }

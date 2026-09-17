@@ -1,0 +1,106 @@
+.ribbon {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 220px;
+}
+
+.ribbon-track {
+  position: relative;
+  height: 22px;
+  border-radius: 4px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  overflow: visible;
+}
+
+.ribbon-zone-forbidden {
+  position: absolute;
+  top: 0; left: 0; bottom: 0;
+  background: repeating-linear-gradient(
+    135deg,
+    var(--forbidden-red-soft),
+    var(--forbidden-red-soft) 4px,
+    #F0DAD5 4px,
+    #F0DAD5 8px
+  );
+  border-radius: 4px 0 0 4px;
+}
+
+.ribbon-zone-safe {
+  position: absolute;
+  top: 0; bottom: 0;
+  background: var(--guard-teal-soft);
+}
+
+.ribbon-floor-line {
+  position: absolute;
+  top: -3px;
+  bottom: -3px;
+  width: 2px;
+  background: var(--forbidden-red);
+  transform: translateX(-1px);
+  z-index: 3;
+}
+
+.ribbon-gap {
+  position: absolute;
+  top: 8px;
+  height: 6px;
+  background: repeating-linear-gradient(90deg, var(--signal-amber), var(--signal-amber) 4px, transparent 4px, transparent 8px);
+  border-radius: 3px;
+  z-index: 1;
+}
+
+.ribbon-marker {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+}
+
+.ribbon-marker-dot {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 1px rgba(18,24,33,0.15);
+}
+
+.ribbon-marker-current .ribbon-marker-dot { background: var(--ink); }
+.ribbon-marker-market .ribbon-marker-dot {
+  background: var(--signal-amber);
+  border-radius: 3px;
+  transform: rotate(45deg);
+}
+
+.ribbon-legend {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  font-size: 11.5px;
+  color: var(--ink-soft);
+}
+
+.ribbon-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.ribbon-legend-item b {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.ribbon-swatch {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.swatch-floor { background: var(--forbidden-red); }
+.swatch-current { background: var(--ink); border-radius: 50%; }
+.swatch-market { background: var(--signal-amber); transform: rotate(45deg); }
